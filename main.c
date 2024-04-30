@@ -160,8 +160,8 @@ int Predict(char *img, char *params)
 
     matrix *v = predictionVector(topredict->input, p);
 
-    float *result = calloc(sizeof(int), 10);
-    float *attended = calloc(sizeof(int), 10);
+    float *result = calloc(sizeof(float), 10);
+    float *attended = calloc(sizeof(float), 10);
     for(size_t j = 0; j < v->col; j++)
     {
         size_t i = 0;

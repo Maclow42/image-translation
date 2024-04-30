@@ -21,4 +21,7 @@ clean:
 	${RM} ${DEP}
 	${RM} main
 
+run: main
+	./main
+
 # END

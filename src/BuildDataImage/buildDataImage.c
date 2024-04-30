@@ -202,18 +202,16 @@ datas *get_imgList(char *path, size_t size)
     // Loop through each entry in the directory
     size_t i = 0;
 
+    // if chdir fails, exit with an error message and status
     if (chdir(path) != 0)
-    {
-        // Handle the error condition, e.g., display an error message or take appropriate action
         perror("chdir failed");
-    }
 
     while ((entry = readdir(directory)) != NULL)
     {
         // If the entry is a regular file, load the image and add its data to dataList
         if (entry->d_type == DT_REG)
         {
-            // printf("%s%s\n", path, entry->d_name);
+            printf("%s%s\n", path, entry->d_name);
             matrix *imgData = imageToMatrix(entry->d_name);
             for (size_t j = 0; j < h * w; j++)
             {

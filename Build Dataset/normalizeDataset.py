@@ -69,6 +69,6 @@ def main(src_dir, dest_dir):
             compteur += 1
 
 if __name__ == '__main__':
-    src_dir = './dataset/SACHA/'
-    dest_dir = './dataset/normalizedSACHA/'
+    src_dir = '../mnist_images'
+    dest_dir = '../mnist_images2'
     main(src_dir, dest_dir)

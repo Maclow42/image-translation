@@ -6,7 +6,7 @@ import cv2
 # Charger les données MNIST
 (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data()
 
-PATH = '../mnist_images'
+PATH = './mnist_images'
 
 # Créer un dossier pour stocker les images
 if not os.path.exists(PATH):
@@ -31,7 +31,6 @@ for i, (image, label) in enumerate(zip(train_images, train_labels)):
 
 # Sauvegarder les images de test
 for i, (image, label) in enumerate(zip(test_images, test_labels)):
-    print(image.shape)
     filepath = f'{PATH}/test/{label}_{i}.png'
     save_image(image, label, filepath)
 
