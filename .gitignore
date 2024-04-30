@@ -163,3 +163,14 @@ cython_debug/
 # dataset
 mnist_images/
 *.png
+
+# C compiled files
+*.o
+*.out
+*.d
+main
+
+#weights
+BACKUP_SAVED
+
+*.json

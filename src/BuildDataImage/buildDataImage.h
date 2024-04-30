@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL2/SDL_surface.h>
-#include "matrix.h"
+#include "../Matrix/matrix.h"
 
 typedef struct 
 {

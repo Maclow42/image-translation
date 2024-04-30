@@ -7,9 +7,9 @@
 #include <time.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "matrix.h"
+#include "../Matrix/matrix.h"
 #include "neuronalNetwork.h"
-#include "saveParams.h"
+#include "../SaveParams/saveParams.h"
 
 void FreeParameters(parameters *p)
 {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "matrix.h"
-#include "BuildDataImage.h"
+#include "../Matrix/matrix.h"
+#include "../BuildDataImage/buildDataImage.h"
 
 typedef struct
 {

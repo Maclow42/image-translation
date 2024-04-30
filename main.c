@@ -6,10 +6,9 @@
 #include <err.h>
 #include <unistd.h>
 #include <time.h>
-#include "../Ressources/matrix.h"
-#include "../Ressources/neuronalNetwork.h"
-#include "../Ressources/saveParams.h"
-
+#include "./src/Matrix/matrix.h"
+#include "./src/NeuronalNetwork/neuronalNetwork.h"
+#include "./src/SaveParams/saveParams.h"
  
 
 size_t layerSize = 800;
@@ -237,7 +236,7 @@ void TrainAgain(char *data, char *loadpath, char *savepath)
 }
 
 
-int main_NeuronalNetwork(int argc, char** argv)
+int main(int argc, char** argv)
 {
     clock_t start = clock();
     // Checks the number of arguments.

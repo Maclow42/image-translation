@@ -1,11 +1,11 @@
-#include "saveParams.h"
 #include <bits/types/FILE.h>
 #include <dirent.h>
 #include <err.h>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "matrix.h"
+#include "../Matrix/matrix.h"
+#include "../SaveParams/saveParams.h"
 
 int remove_directory(const char *path)
 {

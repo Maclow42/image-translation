@@ -1,4 +1,4 @@
-#include "neuronalNetwork.h"
+#include "../NeuronalNetwork/neuronalNetwork.h"
 
 //Save parameters p in path
 void SaveParameters(parameters *p, char *path);

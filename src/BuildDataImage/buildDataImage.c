@@ -1,4 +1,4 @@
-#include "BuildDataImage.h"
+#include "buildDataImage.h"
 #include <SDL2/SDL_surface.h>
 #include <SDL2/SDL_image.h>
 #include <err.h>
