@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <time.h>
 #include "./src/Matrix/matrix.h"
-#include "./src/NeuronalNetwork/neuronalNetwork.h"
+#include "./src/NeuronalNetwork/trainNetwork.h"
 #include "./src/SaveParams/saveParams.h"
  
 
@@ -199,7 +199,7 @@ void TrainNetwork(char *data, char *savepath)
     }
 
     //Train network
-    parameters *p = neuronal_network(inputs, layerSize, layerSize, layerSize, 1, nb_iter, 1, NULL);
+    parameters *p = train_network(inputs, layerSize, layerSize, layerSize, 1, nb_iter, 1, NULL);
     //Save parameters to savepath
     SaveParameters(p, savepath);
 
@@ -227,11 +227,11 @@ void TrainAgain(char *data, char *loadpath, char *savepath)
 
     //Train network
     parameters *p = LoadParameters(loadpath);
-    p = neuronal_network(inputs, layerSize, layerSize, layerSize, 0.1, nb_iter, 1, p);
+    p = train_network(inputs, layerSize, layerSize, layerSize, 0.1, nb_iter, 1, p);
     //Save parameters to savepath
     SaveParameters(p, savepath);
 
-    Predict("/home/maclow/Documents/EPITA/S3#/Projet/NeuronalNetwork/dataset/mnist_images/test", savepath);
+    Predict("/home/maclow/Documents/EPITA/S3#/Projet/trainNetwork/dataset/mnist_images/test", savepath);
    
 }
 

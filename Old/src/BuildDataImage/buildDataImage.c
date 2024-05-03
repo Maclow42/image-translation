@@ -211,7 +211,6 @@ datas *get_imgList(char *path, size_t size)
         // If the entry is a regular file, load the image and add its data to dataList
         if (entry->d_type == DT_REG)
         {
-            printf("%s%s\n", path, entry->d_name);
             matrix *imgData = imageToMatrix(entry->d_name);
             for (size_t j = 0; j < h * w; j++)
             {

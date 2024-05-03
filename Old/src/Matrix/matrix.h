@@ -19,9 +19,8 @@ void freeMatrix(matrix *m1);
 //Create a matrix of 0 with row rows and col columns and return it
 matrix *Matrix(size_t row, size_t col);
 
-//Shuffle m1 and m2 together
-void shuffle_matrixXY(matrix *m1, matrix *m2);
-void shuffle(matrix *m1, matrix *m2);
+//Shuffle m1 and m2 columns accordingly
+void shuffle_columns(matrix *m1, matrix *m2);
 
 //Create a matrix of x with row rows and col columns and return it
 matrix *MatrixOf(size_t row, size_t col, float x);

@@ -5,7 +5,7 @@ import cv2
 import os
 from numpy import random
 
-PATH = "/home/maclow/Documents/EPITA/S3#/Projet/NeuronalNetwork/dataset/emnist_images/"
+PATH = "/home/maclow/Documents/EPITA/S3#/Projet/trainNetwork/dataset/emnist_images/"
 
 s1 = 48
 s2 = 24

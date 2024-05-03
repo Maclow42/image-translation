@@ -26,52 +26,23 @@ matrix *Matrix(size_t row, size_t col)
     return m;
 }
 
-void shuffle_matrixXY(matrix *m1, matrix *m2)
+void shuffle_columns(matrix *m1,matrix *m2)
 {
     srand(time(NULL));
-    for (size_t i = 0; i < m1->row; i++)
+    for (size_t i = 0; i < m1->col; i++)
     {
-        size_t i2 = rand() % m1->row;
-
-        float x0_temp = m1->data[i * m1->col];
-        float x1_temp = m1->data[i * m1->col + 1];
-        float y_temp = m2->data[i];
-
-        m1->data[i * m1->col] = m1->data[i2 * m1->col];
-        m1->data[i * m1->col + 1] = m1->data[i2 * m1->col + 1];
-
-        m2->data[i] = m2->data[i2];
-
-        m1->data[i2 * m1->col] = x0_temp;
-        m1->data[i2 * m1->col + 1] = x1_temp;
-
-        m2->data[i2] = y_temp;
-    }
-}
-
-void shuffle(matrix *m1, matrix *m2)
-{
-    // Initialise le générateur de nombres aléatoires avec une graine aléatoire basée sur l'horloge du système
-    srand(time(NULL));
-
-    // Mélange les colonnes en échangeant aléatoirement les éléments
-    for (size_t i = m1->col - 1; i > 0; i--)
-    {
-        size_t j = rand() % (i + 1);
-        if (i != j)
+        size_t random_index = rand() % m1->col;
+        for (size_t j = 0; j < m1->row; j++)
         {
-            for (size_t k = 0; k < m1->row; k++)
-            {
-                float temp = m1->data[k * m1->col + i];
-                m1->data[k * m1->col + i] = m1->data[k * m1->col + j];
-                m1->data[k * m1->col + j] = temp;
-            }
-            for (size_t k = 0; k < m2->row; k++)
-            {
-                float temp = m2->data[k * m2->col + i];
-                m2->data[k * m2->col + i] = m2->data[k * m2->col + j];
-                m2->data[k * m2->col + j] = temp;
-            }
+            float temp = m1->data[j * m1->col + i];
+            m1->data[j * m1->col + i] = m1->data[j * m1->col + random_index];
+            m1->data[j * m1->col + random_index] = temp;
+        }
+        for (size_t j = 0; j < m2->row; j++)
+        {
+            float temp = m2->data[j * m2->col + i];
+            m2->data[j * m2->col + i] = m2->data[j * m2->col + random_index];
+            m2->data[j * m2->col + random_index] = temp;
         }
     }
 }
